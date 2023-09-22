@@ -1,8 +1,10 @@
 import PropTypes from "prop-types";
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { AiOutlineDollarCircle } from 'react-icons/ai';
+import { Link } from "react-router-dom";
 const FeaturedJob = ({ job }) => {
   const {
+    id,
     logo,
     job_title,
     company_name,
@@ -32,7 +34,9 @@ const FeaturedJob = ({ job }) => {
           <div className="flex items-center  text-[#757575] text-xl font-semibold"><span className="text-2xl"><AiOutlineDollarCircle /></span> {salary}</div>
         </div>
         <div className="pl-6 pt-6 pb-6">
+          <Link to={`/job/${id}`}>
           <button className="btn btn-primary">View Details</button>
+          </Link>
         </div>
       </div>
     </div>
